@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.content {
+	height: 600px;
+	width: 100%;
+	background-color: gray;
+	padding:5px;
+}
+.parent{
+	height: 300px;
+	width: 400px;
+	background-color: #444444;
+	margin-top:100px;
+	margin-left:100px;
+	padding-top: 100px;
+	position: relative;
+}
+
+.stick {
+	background-color: rgb(201, 85, 124);
+	height: 5px;
+	width: 300px;
+	margin:0 50px 100px 50px;
+	z-index: 5;
+	position: absolute;
+}
+
+.stick1 {
+	animation: moveFirst 2s linear;
+	animation-fill-mode: forwards;
+}
+
+.stick2 {
+	animation: moveSecond 2s linear;
+	animation-fill-mode: forwards;
+	top: 200px;
+}
+
+.stick3 {
+	animation: moveThird 2s linear;
+	animation-fill-mode: forwards;
+	top: 310px;
+}
+
+.circle {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  border-radius: 50%;
+  top: 25px;
+  left: 15px;
+  border: 10px solid green;
+  border-radius: 50%;	
+  	animation: showCircle 2s linear;
+	animation-fill-mode: forwards;
+}
+
+
+
+
+
+@keyframes showCircle {
+	from {
+	    border-right-color: green;
+	}
+
+	to {
+		border-right-color: transparent;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes moveSecond {
+	from {
+		margin-left: 50px;
+	}
+	to {
+		margin-left:400px;
+	}
+	20% {
+		margin-left: 100px;
+	}
+	20% {
+		width: 300px;
+	}
+	100% {
+		width: 0;
+	}
+}
+
+@keyframes moveFirst {
+	from {
+
+	}
+	to {
+		transform: rotate(45deg) translate(75px, 75px);
+	}
+}
+
+@keyframes moveThird {
+	from {
+
+	}
+	to {
+		transform: rotate(-45deg) translate(75px, -75px);
+	}
+}
+
